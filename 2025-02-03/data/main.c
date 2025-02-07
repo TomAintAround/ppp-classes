@@ -1,14 +1,18 @@
 #include <stdio.h>
 
 int main() {
-	int age;
-	int weight;
+	int idade;
+	int peso;
 	
 	printf("A sua idade: ");
-	scanf("%d", &age);
+	if (scanf("%d", &idade) != 1) {
+		printf("Algo correu mal");
+	}
 	printf("O seu peso: ");
-	scanf("%d", &weight);
+	if (scanf("%d", &peso) != 1) {
+		printf("Algo correu mal");
+	}
 
-	printf("Chamo-me Tomás, tenho %d anos e peso %d Kg.\n", age, weight);
+	printf("Chamo-me Tomás, tenho %d anos e peso %d Kg.\n", idade, peso);
 	return 0;
 }
