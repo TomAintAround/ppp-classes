@@ -115,7 +115,8 @@ void ordernarEquipas(Equipa equipas[]) {
 		if (vitoriaPontos || vitoriaGolos || naoOrdemAlfabetica) {
 			equipas[i] = equipa2;
 			equipas[i + 1] = equipa1;
-			i = -1;
+			if (i == 0) i -= 1;
+			else i -= 2;
 		}
 	}
 }
