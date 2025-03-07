@@ -29,32 +29,19 @@ void printDatas(Data *datas) {
 }
 
 Data *descubrirMenorData(Data *datas) {
-	for (int i = 0; i < NUMERO_DATAS - 1; i++) {
-		Data *data1 = datas;
-		Data *data2 = datas + 1;
-		int anoMaior = data1->ano > data2->ano;
-		int anoIgual = data1->ano == data2->ano;
-		int mesMaior = anoIgual && data1->mes > data2->mes;
-		int mesIgual = anoIgual && data1->mes == data2->mes;
-		int diaMaior = mesIgual && data1->dia > data2->dia;
-		
-		if (anoMaior || mesMaior || diaMaior) {
-			*datas = *data2;
-			*(datas + 1) = *data1;
-			
-			if (i == 0) {
-				i -= 1;
-				continue;
-			}
-			else {
-				i -= 2;
-				datas--;
-				continue;
-			}
+	Data *menorData = datas;
+	for (int i = 1; i < NUMERO_DATAS; i++) {
+		int menorAno = datas->ano < menorData->ano;
+		int igualAno = datas->ano == menorData->ano;
+		int menorMes = igualAno && datas->mes < menorData->mes;
+		int igualMes = igualAno && datas->mes == menorData->mes;
+		int menorDia = igualMes && datas->dia < menorData->dia;
+		if (menorAno || menorMes || menorDia) {
+			menorData = datas;
 		}
 		datas++;
 	}
-	return datas - (NUMERO_DATAS - 1);
+	return menorData;
 }
 
 int main() {
