@@ -4,10 +4,6 @@
 #include <stdlib.h>
 #include "main.h"
 
-int eNumero(char letra) {
-	return letra >= '0' && letra <= '9';
-}
-
 int main() {
 	char* string = (char*)malloc((MAX + 1) * sizeof(char));
 	printf("Insire a sua frase:\n");
