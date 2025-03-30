@@ -15,8 +15,8 @@
 		devShells.${system}.default =
 			pkgs.mkShell {
 				packages = with pkgs; [
+					gccgo14
 					gdb
-					libgcc
 					valgrind
 				];
 			};
