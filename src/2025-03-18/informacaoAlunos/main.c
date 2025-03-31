@@ -2,8 +2,8 @@
 // Exercíco 11.2.3
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <string.h>
+#include <time.h>
 
 #define NUMERO_ALUNOS 20
 #define COMPRIMENTO_NOME 16
@@ -41,8 +41,10 @@ void push(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!empty(queue)) queue->last->next = node; 
-		else queue->first = node;
+		if (!empty(queue))
+			queue->last->next = node;
+		else
+			queue->first = node;
 		queue->last = node;
 	}
 }
@@ -70,11 +72,10 @@ void clear(queue_t* queue) {
 void armazenar(queue_t* fila) {
 	srand(time(NULL));
 	char nomes[NUMERO_ALUNOS][COMPRIMENTO_NOME] = {
-		"Tomás", "Gabriel", "Simão", "Afonso", "Pedro",
-		"Diogo", "André", "João", "Guilherme", "Gonçalo",
-		"Mariana", "Henrique", "Joana", "Mara", "Lara",
-		"Daniela", "Patrícia", "Vanda", "Sónia", "Sara"
-	};
+		"Tomás",   "Gabriel",  "Simão", "Afonso",	 "Pedro",
+		"Diogo",   "André",	   "João",	"Guilherme", "Gonçalo",
+		"Mariana", "Henrique", "Joana", "Mara",		 "Lara",
+		"Daniela", "Patrícia", "Vanda", "Sónia",	 "Sara"};
 	for (int i = 0; i < NUMERO_ALUNOS; i++) {
 		data_t aluno;
 		strcpy(aluno.nome, nomes[i]);
@@ -113,7 +114,8 @@ int main() {
 	armazenar(&fila);
 	data_t melhorAluno;
 	double melhorMedia = media(&fila, &melhorAluno);
-	printf("A melhor média é %.1f, do/a aluno/a %s, número %d.\n", melhorMedia, melhorAluno.nome, melhorAluno.numero);
+	printf("A melhor média é %.1f, do/a aluno/a %s, número %d.\n", melhorMedia,
+		   melhorAluno.nome, melhorAluno.numero);
 
 	clear(&fila);
 	return 0;

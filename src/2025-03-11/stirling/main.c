@@ -8,17 +8,13 @@ int stirling(int n, int k) {
 
 void stirling2(int m, int S[m + 1][m + 1]) {
 	for (int n = 0; n <= m; n++) {
-		for (int k = 0; k <= m; k++) {
-			S[n][k] = stirling(n, k);
-		}
+		for (int k = 0; k <= m; k++) { S[n][k] = stirling(n, k); }
 	}
 }
 
 void printMatriz(int m, int S[m + 1][m + 1]) {
 	for (int n = 0; n <= m; n++) {
-		for (int k = 0; k <= m; k++) {
-			printf("%5d ", S[n][k]);
-		}
+		for (int k = 0; k <= m; k++) { printf("%5d ", S[n][k]); }
 		printf("\n");
 	}
 }

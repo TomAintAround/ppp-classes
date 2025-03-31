@@ -32,9 +32,11 @@ void push(queue_t* queue, data_t data) {
 	if (node != NULL) {
 		node->data = data;
 		node->next = NULL;
-		
-		if (!empty(queue)) queue->last->next = node;
-		else queue->first = node;
+
+		if (!empty(queue))
+			queue->last->next = node;
+		else
+			queue->first = node;
 		queue->last = node;
 	}
 }
@@ -68,14 +70,14 @@ int perguntarInteiro() {
 	return valor;
 }
 
-void construirVetor(int *vetor, int tamanho) {
+void construirVetor(int* vetor, int tamanho) {
 	for (int i = 0; i < tamanho; i++) {
 		printf("Insire o valor %d: ", i + 1);
 		vetor[i] = perguntarInteiro();
 	}
 }
 
-int ocorrencias(int numero, int *vetor, int tamanho) {
+int ocorrencias(int numero, int* vetor, int tamanho) {
 	int counter = 0;
 	for (int i = 0; i < tamanho; i++) {
 		if (vetor[i] == numero) counter++;
@@ -83,7 +85,7 @@ int ocorrencias(int numero, int *vetor, int tamanho) {
 	return counter;
 }
 
-void armazenar(queue_t* fila, int *vetor, int tamanho) {
+void armazenar(queue_t* fila, int* vetor, int tamanho) {
 	for (int i = 0; i < tamanho; i++) {
 		int contador = ocorrencias(vetor[i], vetor, tamanho);
 		data_t node = {vetor[i], contador};
@@ -94,7 +96,8 @@ void armazenar(queue_t* fila, int *vetor, int tamanho) {
 void printFila(queue_t* fila) {
 	while (!empty(fila)) {
 		data_t node = front(fila);
-		printf("Número %d, que ocorre %d vezes.\n", node.numero, node.ocorrencias);
+		printf("Número %d, que ocorre %d vezes.\n", node.numero,
+			   node.ocorrencias);
 		pop(fila);
 	}
 }

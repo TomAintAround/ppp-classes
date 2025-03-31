@@ -6,7 +6,7 @@ int main() {
 	char nome[100];
 	int idade;
 	int peso;
-	
+
 	printf("O seu nome: ");
 	if (scanf("%s", nome) != 1) {
 		printf("\nAlgo correu mal");

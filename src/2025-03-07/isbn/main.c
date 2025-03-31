@@ -1,12 +1,12 @@
 // Folha 3
 // Exercício 9.3.1
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 #define TAMANHO 10
 
-int validoISBN(char *isbn) {
+int validoISBN(char* isbn) {
 	int tamanhoReal = strlen(isbn) - 1; // -'\n'
 	if (tamanhoReal < TAMANHO * 2 - 1) return 0;
 	for (int i = 0; isbn[i] != '\n' && isbn[i] != '\0'; i += 2) {
@@ -16,7 +16,7 @@ int validoISBN(char *isbn) {
 	return 1;
 }
 
-void obterISBN(int *isbn) {
+void obterISBN(int* isbn) {
 	int tamanho = TAMANHO * 2 + 1; // mais os espaços, mais o '\n' e mais o '\0'
 	char isbnTexto[tamanho];
 	printf("Inisire os dígitos do ISBN (separados por um espaço):\n");
@@ -36,7 +36,7 @@ void obterISBN(int *isbn) {
 	}
 }
 
-void somaParcial(int *numeros, int *resultados) {
+void somaParcial(int* numeros, int* resultados) {
 	int acumulador = 0;
 	for (int i = 0; i < TAMANHO; i++) {
 		acumulador += numeros[i];
@@ -44,10 +44,8 @@ void somaParcial(int *numeros, int *resultados) {
 	}
 }
 
-void printValores(int *numeros) {
-	for (int i = 0; i < TAMANHO; i++) {
-		printf("%d ", numeros[i]);
-	}
+void printValores(int* numeros) {
+	for (int i = 0; i < TAMANHO; i++) { printf("%d ", numeros[i]); }
 	printf("\n");
 }
 
@@ -67,10 +65,11 @@ int main() {
 	printValores(s2);
 
 	if (s2[TAMANHO - 1] % 11 == 0) {
-		printf("O ISBN é correto, porque %d é divisível por 11.\n", s2[TAMANHO - 1]);
-	}
-	else {
-		printf("O ISBN é incorreto, porque %d não é divisível por 11.\n", s2[TAMANHO - 1]);
+		printf("O ISBN é correto, porque %d é divisível por 11.\n",
+			   s2[TAMANHO - 1]);
+	} else {
+		printf("O ISBN é incorreto, porque %d não é divisível por 11.\n",
+			   s2[TAMANHO - 1]);
 	}
 
 	return 0;

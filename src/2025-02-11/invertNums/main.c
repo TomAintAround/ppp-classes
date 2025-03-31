@@ -1,7 +1,7 @@
 // Folha 1
 // Exercício 4.2.6
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
 int inverte(int numero) {
 	int valor = 0;
@@ -25,9 +25,7 @@ int main() {
 
 	int numeroInvertido = inverte(numero);
 	printf("O número invertido de %d é %d.\n", numero, numeroInvertido);
-	if (numeroInvertido == numero) {
-		printf("É uma capicua.\n");
-	}
+	if (numeroInvertido == numero) { printf("É uma capicua.\n"); }
 
 	return 0;
 }

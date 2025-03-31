@@ -3,9 +3,7 @@
 #include <stdio.h>
 
 unsigned long permutacao(int n, int k) {
-	if (k <= 1) {
-		return n;
-	}
+	if (k <= 1) { return n; }
 	return n * permutacao(n - 1, k - 1);
 }
 

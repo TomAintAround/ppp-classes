@@ -1,8 +1,8 @@
 // Folha 3
 // Exercício 10.3.1
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 int main() {
 	char* string = (char*)malloc((MAX + 1) * sizeof(char));
@@ -12,20 +12,20 @@ int main() {
 		return -1;
 	}
 
-	long numeroMaior = 0; long numero = 0;
+	long numeroMaior = 0;
+	long numero = 0;
 	for (int i = 0; i <= MAX; i++) {
 		if (string[i] >= '0' && string[i] <= '9') {
 			numero *= 10;
 			numero += string[i] - '0';
-		}
-		else numero = 0;
+		} else
+			numero = 0;
 		if (numero > numeroMaior) numeroMaior = numero;
 	}
 
 	if (numeroMaior == 0) {
 		printf("Não foi encontrado um inteiro.\n");
-	}
-	else {
+	} else {
 		printf("Inteiro: %ld\n", numeroMaior);
 	}
 

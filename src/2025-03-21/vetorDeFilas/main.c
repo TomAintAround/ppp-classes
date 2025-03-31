@@ -32,8 +32,10 @@ void push(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!empty(queue)) queue->last->next = node;
-		else queue->first = node;
+		if (!empty(queue))
+			queue->last->next = node;
+		else
+			queue->first = node;
 		queue->last = node;
 	}
 }
@@ -54,7 +56,8 @@ data_t front(queue_t* queue) {
 }
 
 void clean(queue_t* queue) {
-	while (!empty(queue)) pop(queue);
+	while (!empty(queue))
+		pop(queue);
 	init(queue);
 }
 

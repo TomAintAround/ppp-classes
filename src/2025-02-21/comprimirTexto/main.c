@@ -22,8 +22,7 @@ void comprimirTexto(char texto[], char resultado[]) {
 			for (int posicao = 0; repeticoes[posicao] != '\0'; posicao++) {
 				resultado[lugar++] = repeticoes[posicao];
 			}
-		}
-		else {
+		} else {
 			for (int _ = 0; _ < contador; _++) {
 				resultado[lugar++] = texto[i];
 			}

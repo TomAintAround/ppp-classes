@@ -1,8 +1,8 @@
 // Folha 3
 // Exercício 10.1.2
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 int perguntarNumero(int min, int max) {
 	int numero = min - 1;
@@ -16,7 +16,7 @@ int perguntarNumero(int min, int max) {
 	return numero;
 }
 
-void definirMatriz(int **matriz, int tamanho) {
+void definirMatriz(int** matriz, int tamanho) {
 	for (int linha = 0; linha < tamanho; linha++) {
 		for (int coluna = 0; coluna < tamanho; coluna++) {
 			printf("Linha %d, coluna %d: ", linha + 1, coluna + 1);
@@ -62,9 +62,7 @@ int main() {
 	printf("Matriz duplicada por %d:\n", multiplicador);
 	printMatriz(matriz, tamanho);
 
-	for (int i = 0; i < tamanho; i++) {
-		free(matriz[i]);
-	}
+	for (int i = 0; i < tamanho; i++) { free(matriz[i]); }
 	free(matriz);
 	return 0;
 }

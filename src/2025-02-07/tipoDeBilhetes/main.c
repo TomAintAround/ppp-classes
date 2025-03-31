@@ -14,14 +14,11 @@ int main() {
 
 	if (idade >= 13 && idade <= 24) {
 		printf("O seu bilhete é o bilhete radical");
-	}
-	else if ((idade >= 25 && idade <= 36) || (idade >= 49 && idade <= 60)) {
+	} else if ((idade >= 25 && idade <= 36) || (idade >= 49 && idade <= 60)) {
 		printf("O seu bilhete é o bilhete light");
-	}
-	else if (idade >= 37 && idade <= 48) {
+	} else if (idade >= 37 && idade <= 48) {
 		printf("O seu bilhete é o bilhete normal");
-	}
-	else {
+	} else {
 		printf("Está isente de pagamento");
 	}
 

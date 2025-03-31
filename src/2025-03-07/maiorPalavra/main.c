@@ -5,13 +5,13 @@
 
 #define TAMANHO_STRING 1024
 
-char *maiorPalavra(char *string) {
-	char *pPalavra = strtok(string, " ");
-	char *palavraMaior = string;
+char* maiorPalavra(char* string) {
+	char* pPalavra = strtok(string, " ");
+	char* palavraMaior = string;
 	int comprimentoMax = 0;
 	int comprimento = 0;
 	while (pPalavra != NULL) {
-		char *letra = pPalavra;
+		char* letra = pPalavra;
 		while (*letra != '\0') {
 			if (comprimentoMax < ++comprimento) {
 				comprimentoMax = comprimento;

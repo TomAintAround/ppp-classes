@@ -22,10 +22,9 @@ int main() {
 	if (hora > 12) {
 		hora -= 12;
 		printf("%d:%d pm\n", hora, minuto);
-	}
-	else {
+	} else {
 		printf("%d:%d am\n", hora, minuto);
 	}
-	
+
 	return 0;
 }

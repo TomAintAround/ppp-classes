@@ -1,7 +1,7 @@
 // Folha 2
 // Exercício 6.1.3
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <string.h>
 
 #define TAMANHO 100
@@ -27,13 +27,12 @@ int main() {
 	for (int i = 0; i < tamanhoA; i++) {
 		contador += 1;
 
-	if (stringA[i] != stringB[i - progresso]) {
+		if (stringA[i] != stringB[i - progresso]) {
 			i = progresso;
 			progresso += 1;
 			contador = 0;
 			continue;
-		}
-		else if (tamanhoB == contador) {
+		} else if (tamanhoB == contador) {
 			bContidoA = true;
 			break;
 		}
@@ -41,8 +40,7 @@ int main() {
 
 	if (bContidoA) {
 		printf("A frase B está contida em A.\n");
-	}
-	else {
+	} else {
 		printf("A frase B não está contida em A.\n");
 	}
 

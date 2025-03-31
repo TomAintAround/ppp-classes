@@ -14,7 +14,8 @@ void printTabela(int linhas, int colunas, int tabela[][colunas]) {
 void construirTabela(int linhas, int colunas, int tabela[][colunas]) {
 	for (int linha = 0; linha < linhas; linha++) {
 		for (int coluna = 0; coluna < colunas; coluna++) {
-			printf("Insire um número para a linha %d coluna %d: ", linha + 1, coluna + 1);
+			printf("Insire um número para a linha %d coluna %d: ", linha + 1,
+				   coluna + 1);
 			if (scanf("%d", &tabela[linha][coluna]) != 1) {
 				printf("Algo correu mal e será definido como -1.");
 				tabela[linha][coluna] = -1;

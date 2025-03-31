@@ -9,9 +9,7 @@ void dobrar(int array[], int tamanho) {
 }
 
 void printArray(int array[], int tamanho) {
-	for (int i = 0; i < tamanho; i++) {
-		printf("%d: %d\n", i, array[i]);
-	}
+	for (int i = 0; i < tamanho; i++) { printf("%d: %d\n", i, array[i]); }
 }
 
 void construirArray(int array[], int tamanho) {

@@ -4,8 +4,8 @@
 
 int main() {
 	double fahr, celcius;
-	double *pfahr = &fahr;
-	double *pcelcius = &celcius;
+	double* pfahr = &fahr;
+	double* pcelcius = &celcius;
 	int lower, upper, step;
 	int *plower, *pupper, *pstep;
 
@@ -18,7 +18,7 @@ int main() {
 
 	*pfahr = *plower;
 	while (1) {
-		*pcelcius = (5.0/9.0) * (*pfahr - 32);
+		*pcelcius = (5.0 / 9.0) * (*pfahr - 32);
 		printf("%3.0fºF %6.1fºC\n", *pfahr, *pcelcius);
 		*pfahr += *pstep;
 		if (*pfahr > *pupper) break;

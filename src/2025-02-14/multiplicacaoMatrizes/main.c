@@ -5,7 +5,8 @@
 int perguntar(char linhasOuColunas[], int matriz) {
 	int resultado = 0;
 	while (resultado < 1 || resultado > 100) {
-		printf("Quantas %s quer que a matriz %d tenha: ", linhasOuColunas, matriz);
+		printf("Quantas %s quer que a matriz %d tenha: ", linhasOuColunas,
+			   matriz);
 		if (scanf("%d", &resultado) != 1) {
 			printf("Algo correu mal e será usado o valor 3.\n");
 			resultado = 3;
@@ -14,7 +15,8 @@ int perguntar(char linhasOuColunas[], int matriz) {
 	return resultado;
 }
 
-void definirMatriz(int linhas, int colunas, int matriz[][colunas], int numeroMatriz) {
+void definirMatriz(int linhas, int colunas, int matriz[][colunas],
+				   int numeroMatriz) {
 	printf("Matriz %d:\n", numeroMatriz);
 	for (int linha = 0; linha < linhas; linha++) {
 		for (int coluna = 0; coluna < colunas; coluna++) {
@@ -28,7 +30,8 @@ void definirMatriz(int linhas, int colunas, int matriz[][colunas], int numeroMat
 	printf("\n");
 }
 
-void printMatriz(int linhas, int colunas, int matriz[][colunas], char qualMatriz[]) {
+void printMatriz(int linhas, int colunas, int matriz[][colunas],
+				 char qualMatriz[]) {
 	printf("Matriz %s:\n", qualMatriz);
 	for (int linha = 0; linha < linhas; linha++) {
 		for (int coluna = 0; coluna < colunas; coluna++) {
@@ -39,7 +42,8 @@ void printMatriz(int linhas, int colunas, int matriz[][colunas], char qualMatriz
 	printf("\n");
 }
 
-int definirValor(int linha1, int coluna2, int colunas1, int colunas2, int matriz1[][colunas1], int matriz2[][colunas2]) {
+int definirValor(int linha1, int coluna2, int colunas1, int colunas2,
+				 int matriz1[][colunas1], int matriz2[][colunas2]) {
 	int resultado = 0;
 	for (int i = 0; i < colunas1; i++) {
 		resultado += matriz1[linha1][i] * matriz2[i][coluna2];
@@ -47,10 +51,13 @@ int definirValor(int linha1, int coluna2, int colunas1, int colunas2, int matriz
 	return resultado;
 }
 
-void multiplicar(int linhas1, int colunas1, int colunas2, int matriz1[][colunas1], int matriz2[][colunas2], int resultado[][colunas2]) {
+void multiplicar(int linhas1, int colunas1, int colunas2,
+				 int matriz1[][colunas1], int matriz2[][colunas2],
+				 int resultado[][colunas2]) {
 	for (int linha = 0; linha < linhas1; linha++) {
 		for (int coluna = 0; coluna < colunas2; coluna++) {
-			resultado[linha][coluna] = definirValor(linha, coluna, colunas1, colunas2, matriz1, matriz2);
+			resultado[linha][coluna] = definirValor(linha, coluna, colunas1,
+													colunas2, matriz1, matriz2);
 		}
 	}
 }

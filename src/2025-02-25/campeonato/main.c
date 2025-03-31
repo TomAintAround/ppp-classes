@@ -61,7 +61,9 @@ void printGolos(Equipa equipas[], Resultado resultados[]) {
 	printf("Jogos e respetivos golos:\n");
 	for (int i = 0; i < QUANTIDADE_EQUIPAS; i++) {
 		Resultado resultado = resultados[i];
-		printf("%s: %d | %s: %d\n", equipas[resultado.equipa1].nome, resultado.golos1, equipas[resultado.equipa2].nome, resultado.golos2);
+		printf("%s: %d | %s: %d\n", equipas[resultado.equipa1].nome,
+			   resultado.golos1, equipas[resultado.equipa2].nome,
+			   resultado.golos2);
 	}
 	printf("\n");
 }
@@ -71,11 +73,9 @@ void calcularPontos(Equipa equipas[], Resultado resultados[]) {
 		Resultado resultado = resultados[i];
 		if (resultado.golos1 > resultado.golos2) {
 			equipas[resultado.equipa1].pontos += 2;
-		}
-		else if (resultado.golos1 < resultado.golos2) {
+		} else if (resultado.golos1 < resultado.golos2) {
 			equipas[resultado.equipa2].pontos += 2;
-		}
-		else {
+		} else {
 			equipas[resultado.equipa1].pontos++;
 			equipas[resultado.equipa2].pontos++;
 		}
@@ -89,15 +89,18 @@ void calcularPontos(Equipa equipas[], Resultado resultados[]) {
 void printPontos(Equipa equipas[]) {
 	printf("Pontuação:\n");
 	for (int i = 0; i < QUANTIDADE_EQUIPAS; i++) {
-		printf("%s: %d (%d golos)\n", equipas[i].nome, equipas[i].pontos, equipas[i].golos);
+		printf("%s: %d (%d golos)\n", equipas[i].nome, equipas[i].pontos,
+			   equipas[i].golos);
 	}
 	printf("\n");
 }
 
 int verificarOrdemAlfabetica(char equipa1[4], char equipa2[4]) {
 	for (int i = 0; i < 4; i++) {
-		if (equipa1[i] < equipa2[i]) return 1;
-		else if (equipa1[i] > equipa2[i]) return 0;
+		if (equipa1[i] < equipa2[i])
+			return 1;
+		else if (equipa1[i] > equipa2[i])
+			return 0;
 	}
 	return 1;
 }
@@ -110,13 +113,16 @@ void ordernarEquipas(Equipa equipas[]) {
 		int empatePontos = equipa1.pontos == equipa2.pontos;
 		int vitoriaGolos = empatePontos && equipa1.golos > equipa2.golos;
 		int empateGolos = empatePontos && equipa1.golos == equipa2.golos;
-		int naoOrdemAlfabetica = empateGolos && !verificarOrdemAlfabetica(equipa1.nome, equipa2.nome);
+		int naoOrdemAlfabetica = empateGolos && !verificarOrdemAlfabetica(
+													equipa1.nome, equipa2.nome);
 
 		if (vitoriaPontos || vitoriaGolos || naoOrdemAlfabetica) {
 			equipas[i] = equipa2;
 			equipas[i + 1] = equipa1;
-			if (i == 0) i -= 1;
-			else i -= 2;
+			if (i == 0)
+				i -= 1;
+			else
+				i -= 2;
 		}
 	}
 }

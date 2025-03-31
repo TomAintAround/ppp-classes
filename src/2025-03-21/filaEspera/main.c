@@ -34,8 +34,10 @@ void push(Q_TYPE* queue, ITEM_TYPE condutor) {
 		node->condutor = condutor;
 		node->next = NULL;
 
-		if (!empty(queue)) queue->rear->next = node;
-		else queue->front = node;
+		if (!empty(queue))
+			queue->rear->next = node;
+		else
+			queue->front = node;
 		queue->rear = node;
 	}
 }
@@ -79,7 +81,7 @@ int perguntarInt(int min, int max) {
 
 void rotacao(Q_TYPE** dias, char* condutor, int dia) {
 	int diaReal = dia - 1;
-	int	diaAnterior = (diaReal - 1) % 7;
+	int diaAnterior = (diaReal - 1) % 7;
 	while (strcmp(front(dias[diaAnterior]), condutor) != 0) {
 		for (int i = 0; i < 7; i++) {
 			push(dias[(i + 1) % 7], front(dias[i]));

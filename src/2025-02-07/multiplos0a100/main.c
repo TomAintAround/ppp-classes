@@ -15,7 +15,7 @@ int main() {
 	}
 
 	int multiplos[LIMITE] = {0};
-	int comprimentoMultiplos = sizeof(multiplos)/sizeof(int);
+	int comprimentoMultiplos = sizeof(multiplos) / sizeof(int);
 	int i = 0;
 	int multiplo = valor;
 	while (multiplo <= LIMITE) {
@@ -26,9 +26,7 @@ int main() {
 
 	printf("Valores: ");
 	for (int j = 0; j < comprimentoMultiplos; j++) {
-		if (multiplos[j] == 0) {
-			break;
-		}
+		if (multiplos[j] == 0) { break; }
 		printf("%d ", multiplos[j]);
 	}
 	return 0;

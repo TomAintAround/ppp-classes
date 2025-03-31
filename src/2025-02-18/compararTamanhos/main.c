@@ -13,7 +13,7 @@ int main() {
 	}
 
 	int i;
-	for (i = 0; string[i] != '\0' && string[i] != '\n'; i++);
+	for (i = 0; string[i] != '\0' && string[i] != '\n'; i++) {}
 	printf("O tamanho é %d.\n", i);
 
 	return 0;

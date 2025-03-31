@@ -1,14 +1,13 @@
 // Folha 2
 // Exercício 5.1.5
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
 void printPrimos(int primos[], int tamanho) {
 	for (int i = 0; i < tamanho; i++) {
 		if (i == 0) {
 			printf("%d", primos[i]);
-		}
-		else {
+		} else {
 			printf(", %d", primos[i]);
 		}
 	}
@@ -17,9 +16,7 @@ void printPrimos(int primos[], int tamanho) {
 
 void construirVetor(int primos[], int numero, int progresso, int tamanho) {
 	for (int i = 1; i <= sqrt(numero); i++) {
-		if (i == 1) {
-			continue;
-		}
+		if (i == 1) { continue; }
 		if (numero % i == 0) {
 			construirVetor(primos, numero + 1, progresso, tamanho);
 			return;
@@ -27,9 +24,7 @@ void construirVetor(int primos[], int numero, int progresso, int tamanho) {
 	}
 	primos[progresso] = numero;
 
-	if (progresso == tamanho - 1) {
-		return;
-	}
+	if (progresso == tamanho - 1) { return; }
 	construirVetor(primos, numero + 1, progresso + 1, tamanho);
 }
 

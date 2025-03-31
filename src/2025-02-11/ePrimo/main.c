@@ -1,13 +1,11 @@
 // Folha 1
 // Exeercício 4.2.4
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
 int ePrimo(int numero) {
 	for (int i = 2; i <= sqrt(numero); i++) {
-		if (numero % i == 0) {
-			return 0;
-		}
+		if (numero % i == 0) { return 0; }
 	}
 	return 1;
 }
@@ -24,8 +22,7 @@ int main() {
 
 	if (ePrimo(numero)) {
 		printf("É primo");
-	}
-	else {
+	} else {
 		printf("Não é primo");
 	}
 

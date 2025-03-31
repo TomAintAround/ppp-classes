@@ -2,7 +2,7 @@
 // Exercício 9.2.2
 #include <stdio.h>
 
-void int3(int *numero) {
+void int3(int* numero) {
 	int contador = 0;
 	char letra;
 	while (contador < 3) {

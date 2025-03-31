@@ -1,8 +1,8 @@
 // Folha 2
 // Exercício 6.3.2
 // This is full of bugs. I gave up
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 #include <string.h>
 
 int perguntarTamanhos(char texto[]) {
@@ -42,7 +42,8 @@ void printSopa(int linhas, int colunas, char sopa[][colunas]) {
 	}
 }
 
-void procurarPalavra(int linhas, int colunas, char sopa[][colunas], char palavra[], int menor, int tamanho) {
+void procurarPalavra(int linhas, int colunas, char sopa[][colunas],
+					 char palavra[], int menor, int tamanho) {
 	for (int linha = 0; linha < linhas; linha++) {
 		for (int coluna = 0; coluna < colunas; coluna++) {
 			int posicao = 0;

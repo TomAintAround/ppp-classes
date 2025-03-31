@@ -41,11 +41,9 @@ int comparar(Data data1, Data data2) {
 	int comparacao = 0;
 	if (data1.ano != data2.ano) {
 		comparacao = data1.ano - data2.ano;
-	}
-	else if (data1.mes != data2.mes) {
+	} else if (data1.mes != data2.mes) {
 		comparacao = data1.mes - data2.mes;
-	}
-	else {
+	} else {
 		comparacao = data1.dia - data2.dia;
 	}
 
@@ -75,18 +73,18 @@ int main() {
 
 	if (comparar(data1, data2) == -1) {
 		printf("A primeira data vem antes da segunda.\n");
-	}
-	else if (comparar(data1, data2) == 1) {
+	} else if (comparar(data1, data2) == 1) {
 		printf("A primeira data vem antes da segunda.\n");
-	}
-	else {
+	} else {
 		printf("As datas são as mesmas.\n");
 	}
 
 	Data diferencaDatas = diferenca(data1, data2);
-	printf("A diferença é de %d dias, %d meses e %d anos.\n", diferencaDatas.dia, diferencaDatas.mes, diferencaDatas.ano);
+	printf("A diferença é de %d dias, %d meses e %d anos.\n",
+		   diferencaDatas.dia, diferencaDatas.mes, diferencaDatas.ano);
 
-	printf("A primeira data situa-se no século %d e a segunda no século %d.", calcularSeculo(data1), calcularSeculo(data2));
+	printf("A primeira data situa-se no século %d e a segunda no século %d.",
+		   calcularSeculo(data1), calcularSeculo(data2));
 
 	return 0;
 }

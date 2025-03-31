@@ -1,8 +1,8 @@
 // Folha 3
 // Exercício 10.2.1
+#include "main.h"
 #include <stdio.h>
 #include <string.h>
-#include "main.h"
 
 int lerConsola(char string[]) {
 	printf("Insire a sua frase:\n");
@@ -13,11 +13,13 @@ int lerConsola(char string[]) {
 	return 0;
 }
 
-int encontrarExpressao(int tamanhoString, char string[], int tamanhoExpressao, char expressao[]) {
+int encontrarExpressao(int tamanhoString, char string[], int tamanhoExpressao,
+					   char expressao[]) {
 	int progresso = 0;
 	for (int i = 0; i < tamanhoString; i++) {
 		if (progresso == tamanhoExpressao - 1) return i - progresso;
-		if (string[i] == expressao[progresso]) progresso++;
+		if (string[i] == expressao[progresso])
+			progresso++;
 		else if (string[i] != expressao[progresso && progresso > 0]) {
 			i -= progresso;
 			progresso = 0;
@@ -29,10 +31,14 @@ int encontrarExpressao(int tamanhoString, char string[], int tamanhoExpressao, c
 int main() {
 	char string[TAMANHO];
 	lerConsola(string);
-	int posicaoWally = encontrarExpressao(TAMANHO, string, strlen("Wally"), "Wally");
+	int posicaoWally =
+		encontrarExpressao(TAMANHO, string, strlen("Wally"), "Wally");
 
-	if (posicaoWally == -1) printf("Palavra não encontrada.\n");
-	else printf("Esta cadeia tem a palavra Wally na posição %d.\n", posicaoWally);
-	
+	if (posicaoWally == -1)
+		printf("Palavra não encontrada.\n");
+	else
+		printf("Esta cadeia tem a palavra Wally na posição %d.\n",
+			   posicaoWally);
+
 	return 0;
 }

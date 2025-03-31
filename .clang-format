@@ -1,0 +1,8 @@
+TabWidth:        4
+IndentWidth:     4
+UseTab:          Always
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: true
+AllowShortBlocksOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+PointerAlignment: Left

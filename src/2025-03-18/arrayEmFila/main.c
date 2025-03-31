@@ -32,8 +32,10 @@ void push(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!empty(queue)) queue->last->next = node;
-		else queue->first = node;
+		if (!empty(queue))
+			queue->last->next = node;
+		else
+			queue->first = node;
 		queue->last = node;
 	}
 }
@@ -93,7 +95,7 @@ void printFila(queue_t* fila) {
 int main() {
 	queue_t fila;
 	init(&fila);
-	
+
 	printf("Valor de N: ");
 	int N = perguntarInteiro();
 	int vetor[N];
