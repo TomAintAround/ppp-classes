@@ -95,18 +95,22 @@ void printPontos(Equipa equipas[]) {
 	printf("\n");
 }
 
+int ordemIncorreta(Equipa equipa1, Equipa equipa2) {
+	if (equipa1.pontos > equipa2.pontos) return 1;
+	if (equipa1.pontos < equipa2.pontos) return 0;
+
+	if (equipa1.golos > equipa2.golos) return 1;
+	if (equipa1.golos < equipa2.golos) return 0;
+
+	if (strcmp(equipa1.nome, equipa2.nome) > 0) return 1;
+	return 0;
+}
+
 void ordernarEquipas(Equipa equipas[]) {
 	for (int i = 0; i < QUANTIDADE_EQUIPAS - 1; i++) {
 		Equipa equipa1 = equipas[i];
 		Equipa equipa2 = equipas[i + 1];
-		int vitoriaPontos = equipa1.pontos > equipa2.pontos;
-		int empatePontos = equipa1.pontos == equipa2.pontos;
-		int vitoriaGolos = empatePontos && equipa1.golos > equipa2.golos;
-		int empateGolos = empatePontos && equipa1.golos == equipa2.golos;
-		int naoOrdemAlfabetica =
-			empateGolos && strcmp(equipa1.nome, equipa2.nome) > 0;
-
-		if (vitoriaPontos || vitoriaGolos || naoOrdemAlfabetica) {
+		if (ordemIncorreta(equipa1, equipa2)) {
 			equipas[i] = equipa2;
 			equipas[i + 1] = equipa1;
 			if (i == 0)
