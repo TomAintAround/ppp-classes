@@ -1,6 +1,5 @@
 // Folha 4
 // Exercício 13.2.2
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,30 +35,11 @@ list_node* clean(list_node* header) {
 	return NULL;
 }
 
-void lower(char* string) {
-	for (int letter = 0; string[letter] != '\n' && string[letter] != '\0';
-		 letter++) {
-		string[letter] = tolower(string[letter]);
-	}
-}
-
-int alphabeticOrder(char* name1, char* name2) {
-	lower(name1);
-	lower(name2);
-	for (int letter = 0; name1[letter] != '\n' && name1[letter] != '\0' &&
-						 name2[letter] != '\n' && name2[letter] != '\0';
-		 letter++) {
-		if (name1[letter] < name2[letter]) return 1;
-		if (name1[letter] > name2[letter]) return 0;
-	}
-	return 1;
-}
-
 void search(list_node* header, char* name, list_node** previous,
 			list_node** current) {
 	*previous = header;
 	*current = header->next;
-	while ((*current != NULL) && alphabeticOrder((*current)->data.name, name)) {
+	while ((*current != NULL) && strcmp((*current)->data.name, name) < 0) {
 		*previous = *current;
 		*current = (*current)->next;
 	}
@@ -69,7 +49,7 @@ void delete(list_node* header, char* name) {
 	list_node* previous;
 	list_node* current;
 	search(header, name, &previous, &current);
-	if (current != NULL && strcmp(current->data.name, name)) {
+	if (current != NULL && strcmp(current->data.name, name) < 0) {
 		previous->next = current->next;
 		free(current);
 	}

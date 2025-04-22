@@ -1,6 +1,5 @@
 // Folha 4
 // Exercício 13.2.5
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -38,29 +37,10 @@ int empty(node_t* header) {
 	return header->next == NULL;
 }
 
-void lower(char* string) {
-	for (int letter = 0; string[letter] != '\n' && string[letter] != '\0';
-		 letter++) {
-		string[letter] = tolower(string[letter]);
-	}
-}
-
-int alphabeticOrder(char* string1, char* string2) {
-	lower(string1);
-	lower(string2);
-	for (int letter = 0; string1[letter] != '\n' && string1[letter] != '\0' &&
-						 string2[letter] != '\n' && string2[letter] != '\0';
-		 letter++) {
-		if (string1[letter] < string2[letter]) return 1;
-		if (string1[letter] > string2[letter]) return 0;
-	}
-	return 0;
-}
-
 void search(node_t* header, char* name, node_t** previous, node_t** current) {
 	*previous = header;
 	*current = header->next;
-	while ((*current != NULL) && alphabeticOrder((*current)->data.word, name)) {
+	while ((*current != NULL) && strcmp((*current)->data.word, name) < 0) {
 		*previous = *current;
 		*current = (*current)->next;
 	}

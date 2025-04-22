@@ -50,28 +50,6 @@ void clean(list_t* list) {
 	init(list);
 }
 
-void lower(char* string) {
-	for (int letra = 0; string[letra] != '\n' && string[letra] != '\0';
-		 letra++) {
-		string[letra] = tolower(string[letra]);
-	}
-}
-
-bool ordemAlfabetica(char* string1, char* string2) {
-	char tempString1[STRING_SIZE];
-	char tempString2[STRING_SIZE];
-	strcpy(tempString1, string1);
-	strcpy(tempString2, string2);
-	int tamanhoMenor = strlen(tempString1) < strlen(tempString2)
-						   ? strlen(tempString1)
-						   : strlen(tempString2);
-	for (int letra = 0; letra < tamanhoMenor; letra++) {
-		if (tempString1[letra] < tempString2[letra]) return true;
-		if (tempString1[letra] > tempString2[letra]) return false;
-	}
-	return true;
-}
-
 bool ordemData(data_t data1, data_t data2) {
 	if (data1.ano < data2.ano) return true;
 	if (data1.ano > data2.ano) return false;
@@ -86,7 +64,7 @@ bool ordemData(data_t data1, data_t data2) {
 void searchNome(list_t* list, char* nome, node_t** previous, node_t** current) {
 	*previous = NULL;
 	*current = list->frontNome;
-	while (*current != NULL && ordemAlfabetica((*current)->atleta.nome, nome)) {
+	while (*current != NULL && strcmp((*current)->atleta.nome, nome) < 0) {
 		*previous = *current;
 		*current = (*current)->proxNome;
 	}

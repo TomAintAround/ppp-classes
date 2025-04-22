@@ -36,30 +36,11 @@ void init(list_t* list) {
 	list->frontAdesao = NULL;
 }
 
-void lower(char* string) {
-	for (int letra = 0; string[letra] != '\n' && string[letra] != '\0';
-		 letra++) {
-		string[letra] = tolower(string[letra]);
-	}
-}
-
-bool ordemAlfabetica(char* string1, char* string2) {
-	lower(string1);
-	lower(string2);
-	int tamanhoMenor =
-		strlen(string1) < strlen(string2) ? strlen(string1) : strlen(string2);
-	for (int letra = 0; letra < tamanhoMenor; letra++) {
-		if (string1[letra] > string2[letra]) return false;
-		if (string1[letra] < string2[letra]) return true;
-	}
-	return true;
-}
-
 void searchNome(list_t* list, char* nome, list_node_t** previous,
 				list_node_t** current) {
 	*previous = NULL;
 	*current = list->frontNome;
-	while (*current != NULL && ordemAlfabetica((*current)->socio.nome, nome)) {
+	while (*current != NULL && strcmp((*current)->socio.nome, nome) < 0) {
 		*previous = *current;
 		*current = (*current)->proxNome;
 	}
