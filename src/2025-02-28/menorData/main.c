@@ -28,15 +28,21 @@ void printDatas(Data* datas) {
 	printf("\n");
 }
 
+int ordemDataCorreta(Data* data1, Data* data2) {
+	if (data1->ano < data2->ano) return 1;
+	if (data1->ano > data2->ano) return 0;
+
+	if (data1->mes < data2->mes) return 1;
+	if (data1->mes > data2->mes) return 0;
+
+	if (data1->dia < data2->dia) return 1;
+	return 0;
+}
+
 Data* descubrirMenorData(Data* datas) {
 	Data* menorData = datas;
-	for (int i = 1; i < NUMERO_DATAS; i++) {
-		int menorAno = datas->ano < menorData->ano;
-		int igualAno = datas->ano == menorData->ano;
-		int menorMes = igualAno && datas->mes < menorData->mes;
-		int igualMes = igualAno && datas->mes == menorData->mes;
-		int menorDia = igualMes && datas->dia < menorData->dia;
-		if (menorAno || menorMes || menorDia) { menorData = datas; }
+	for (int _ = 1; _ < NUMERO_DATAS; _++) {
+		if (ordemDataCorreta(datas, menorData)) menorData = datas;
 		datas++;
 	}
 	return menorData;
