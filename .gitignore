@@ -1,6 +1,9 @@
+# Files with no extensions
 *
 !*.*
 !*/
+
+# VSCode
 .vscode/
 
 # Prerequisites
