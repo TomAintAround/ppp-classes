@@ -25,7 +25,7 @@ void printValores(int sequencia[], int tamanho) {
 	printf("\n");
 }
 
-int procurarMenorOuMaior(int sequencia[], int tamanho, bool maior) {
+int procurarMenorOuMaior(const int sequencia[], int tamanho, bool maior) {
 	int valor = sequencia[0];
 	for (int i = 0; i < tamanho; i++) {
 		if ((sequencia[i] < valor && !maior) || (sequencia[i] > valor && maior)) {
@@ -35,7 +35,7 @@ int procurarMenorOuMaior(int sequencia[], int tamanho, bool maior) {
 	return valor;
 }
 
-int calcularSomatorio(int sequencia[], int tamanho) {
+int calcularSomatorio(const int sequencia[], int tamanho) {
 	int somatorio = 0;
 	for (int i = 0; i < tamanho; i++) { somatorio += sequencia[i]; }
 	return somatorio;

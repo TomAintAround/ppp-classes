@@ -4,7 +4,7 @@
 
 #define TAMANHO 62 // 60 + \n + \0
 
-int numeroPalavras(char frase[]) {
+int numeroPalavras(const char frase[]) {
 	int contador = 0;
 	for (int i = 0; i < TAMANHO; i++) {
 		if (frase[i] == ' ') contador++;

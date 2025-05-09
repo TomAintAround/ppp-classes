@@ -42,7 +42,7 @@ void printSopa(int linhas, int colunas, char sopa[][colunas]) {
 }
 
 void procurarPalavra(int linhas, int colunas, char sopa[][colunas],
-					 char palavra[], int menor, int tamanho) {
+					 const char palavra[], int menor, int tamanho) {
 	for (int linha = 0; linha < linhas; linha++) {
 		for (int coluna = 0; coluna < colunas; coluna++) {
 			int posicao = 0;

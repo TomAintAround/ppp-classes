@@ -42,11 +42,11 @@ void escreverResultado(FILE* resultado, int* inteiros, size_t tamanho,
 	fprintf(resultado, "Menor número: %d\n", *menorNumero);
 }
 
-void diferenca(int* maiorNumero, int* menorNumero) {
+void diferenca(const int* maiorNumero, const int* menorNumero) {
 	printf("Diferença entre maior e menor números: %d.\n", *maiorNumero - *menorNumero);
 }
 
-double calcularMedia(int* inteiros, size_t tamanho) {
+double calcularMedia(const int* inteiros, size_t tamanho) {
 	double media = 0;
 	for (size_t i = 0; i < tamanho; i++) media += inteiros[i];
 	return media / tamanho;

@@ -13,8 +13,8 @@ int lerConsola(char string[]) {
 	return 0;
 }
 
-int encontrarExpressao(int tamanhoString, char string[], int tamanhoExpressao,
-					   char expressao[]) {
+int encontrarExpressao(int tamanhoString, const char string[],
+					   int tamanhoExpressao, const char expressao[]) {
 	int progresso = 0;
 	for (int i = 0; i < tamanhoString; i++) {
 		if (progresso == tamanhoExpressao - 1) return i - progresso;

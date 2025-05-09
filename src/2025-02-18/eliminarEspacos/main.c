@@ -4,7 +4,7 @@
 
 #define TAMANHO 200
 
-void eliminarEspacos(char frase[TAMANHO], char fraseSemEspacos[TAMANHO]) {
+void eliminarEspacos(const char frase[TAMANHO], char fraseSemEspacos[TAMANHO]) {
 	int progresso = 0;
 	for (int i = 0; i < TAMANHO; i++) {
 		if (frase[i] != ' ' && frase[i] != '\t') {

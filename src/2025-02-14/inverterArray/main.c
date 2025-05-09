@@ -4,7 +4,7 @@
 
 #define TAMANHO 10
 
-void inverter(int vetor[], int vetorInvertido[]) {
+void inverter(const int vetor[], int vetorInvertido[]) {
 	for (int i = 0; i < TAMANHO; i++) {
 		vetorInvertido[i] = vetor[TAMANHO - 1 - i];
 	}

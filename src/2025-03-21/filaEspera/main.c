@@ -7,9 +7,9 @@
 #define ITEM_TYPE char*
 #define STRING_SIZE 16
 
-typedef struct node_type {
+typedef struct SNodeType {
 	ITEM_TYPE condutor;
-	struct node_type* next;
+	struct SNodeType* next;
 } QNODE_TYPE;
 
 typedef QNODE_TYPE* QNODE_PTR;

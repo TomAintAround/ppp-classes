@@ -16,7 +16,7 @@ int validoISBN(char* isbn) {
 }
 
 void obterISBN(int* isbn) {
-	int tamanho = TAMANHO * 2 + 1; // mais os espaços, mais o '\n' e mais o '\0'
+	int tamanho = (TAMANHO * 2) + 1; // mais os espaços, mais o '\n' e mais o '\0'
 	char isbnTexto[tamanho];
 	printf("Inisire os dígitos do ISBN (separados por um espaço):\n");
 	if (fgets(isbnTexto, tamanho, stdin) == NULL) {
@@ -35,7 +35,7 @@ void obterISBN(int* isbn) {
 	}
 }
 
-void somaParcial(int* numeros, int* resultados) {
+void somaParcial(const int* numeros, int* resultados) {
 	int acumulador = 0;
 	for (int i = 0; i < TAMANHO; i++) {
 		acumulador += numeros[i];

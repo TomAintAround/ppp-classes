@@ -78,7 +78,7 @@ void construirVetor(int* vetor, int tamanho) {
 	}
 }
 
-int ocorrencias(int numero, int* vetor, int tamanho) {
+int ocorrencias(int numero, const int* vetor, int tamanho) {
 	int counter = 0;
 	for (int i = 0; i < tamanho; i++) {
 		if (vetor[i] == numero) counter++;

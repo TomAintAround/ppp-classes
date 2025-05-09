@@ -4,7 +4,7 @@
 
 #define TAMANHO 2000
 
-void comprimirTexto(char texto[], char resultado[]) {
+void comprimirTexto(const char texto[], char resultado[]) {
 	int lugar = 0;
 	int contador;
 	for (int i = 0; texto[i] != '\n'; i++) {

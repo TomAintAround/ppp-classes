@@ -3,7 +3,7 @@
 int stirling(int n, int k) {
 	if (k == 0 || k > n) return 0;
 	if (n == k) return 1;
-	return k * stirling(n - 1, k) + stirling(n - 1, k - 1);
+	return (k * stirling(n - 1, k)) + stirling(n - 1, k - 1);
 }
 
 void stirling2(int m, int S[m + 1][m + 1]) {
