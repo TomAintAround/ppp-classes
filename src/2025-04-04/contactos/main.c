@@ -19,7 +19,7 @@ typedef struct _list_node {
 list_node* create() {
 	list_node* header = (list_node*)malloc(sizeof(list_node));
 	if (header != NULL) {
-		data_t data = {"Joaquim", 999999999};
+		data_t data = { "Joaquim", 999999999 };
 		header->data = data;
 		header->next = NULL;
 	}
@@ -35,8 +35,7 @@ list_node* clean(list_node* header) {
 	return NULL;
 }
 
-void search(list_node* header, char* name, list_node** previous,
-			list_node** current) {
+void search(list_node* header, char* name, list_node** previous, list_node** current) {
 	*previous = header;
 	*current = header->next;
 	while ((*current != NULL) && strcmp((*current)->data.name, name) < 0) {
@@ -106,33 +105,31 @@ int main() {
 		while (getchar() != '\n');
 
 		switch (choice) {
-		case 1:
-			data_t person;
-			printf("Nome da pessoa: ");
-			if (fgets(person.name, NAME_LENGTH, stdin) == NULL) error();
-			printf("Número de telemóvel da pessoa: ");
-			if (scanf("%d", &person.phoneNumber) != 1) error();
-			insert(header, person);
-			printf("\n");
-			break;
-		case 2:
-			char name[NAME_LENGTH];
-			printf("Nome da pessoa: ");
-			if (fgets(name, NAME_LENGTH, stdin) == NULL) error();
-			delete (header, name);
-			printf("\n");
-			break;
-		case 3:
-			printListInOrder(header);
-			printf("\n");
-			break;
-		case 4:
-			printListBackwards(header->next);
-			printf("\n");
-			break;
-		default:
-			choice = 5;
-			break;
+			case 1:
+				data_t person;
+				printf("Nome da pessoa: ");
+				if (fgets(person.name, NAME_LENGTH, stdin) == NULL) error();
+				printf("Número de telemóvel da pessoa: ");
+				if (scanf("%d", &person.phoneNumber) != 1) error();
+				insert(header, person);
+				printf("\n");
+				break;
+			case 2:
+				char name[NAME_LENGTH];
+				printf("Nome da pessoa: ");
+				if (fgets(name, NAME_LENGTH, stdin) == NULL) error();
+				delete (header, name);
+				printf("\n");
+				break;
+			case 3:
+				printListInOrder(header);
+				printf("\n");
+				break;
+			case 4:
+				printListBackwards(header->next);
+				printf("\n");
+				break;
+			default: choice = 5; break;
 		}
 	} while (choice != 5);
 

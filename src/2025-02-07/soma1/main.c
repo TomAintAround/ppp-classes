@@ -12,9 +12,7 @@ int main() {
 		return -1;
 	}
 
-	for (int i = 1; i <= limite; i++) {
-		soma += i;
-	}
+	for (int i = 1; i <= limite; i++) soma += i;
 
 	printf("%ld\n", soma);
 	return 0;

@@ -14,32 +14,34 @@ void transformarMaiusculas(char texto[]) {
 void codificarTexto(char texto[]) {
 	for (int i = 0; i < (int)strlen(texto) - 1; i++) {
 		int numeroLetra = texto[i] - 'A' + 1;
-		if (numeroLetra >= 1 && numeroLetra <= 2)
+		if (numeroLetra >= 1 && numeroLetra <= 2) {
 			texto[i] += 3;
-		else if (numeroLetra == 3)
+		} else if (numeroLetra == 3) {
 			texto[i] = 9 + 'A' - 1;
-		else if (numeroLetra >= 4 && numeroLetra <= 6)
+		} else if (numeroLetra >= 4 && numeroLetra <= 6) {
 			texto[i] -= 3;
-		else if (numeroLetra >= 7 && numeroLetra <= 9)
+		} else if (numeroLetra >= 7 && numeroLetra <= 9) {
 			texto[i] -= 1;
-		else if (numeroLetra >= 13 && numeroLetra <= 26)
+		} else if (numeroLetra >= 13 && numeroLetra <= 26) {
 			texto[i] = 39 - numeroLetra + 'A' - 1;
+		}
 	}
 }
 
 void descodificarTexto(char texto[]) {
 	for (int i = 0; i < (int)strlen(texto) - 1; i++) {
 		int numeroLetra = texto[i] - 'A' + 1;
-		if (numeroLetra >= 1 && numeroLetra <= 3)
+		if (numeroLetra >= 1 && numeroLetra <= 3) {
 			texto[i] += 3;
-		else if (numeroLetra >= 4 && numeroLetra <= 5)
+		} else if (numeroLetra >= 4 && numeroLetra <= 5) {
 			texto[i] -= 3;
-		else if (numeroLetra >= 6 && numeroLetra <= 8)
+		} else if (numeroLetra >= 6 && numeroLetra <= 8) {
 			texto[i] += 1;
-		else if (numeroLetra == 9)
+		} else if (numeroLetra == 9) {
 			texto[i] = 3 + 'A' - 1;
-		else if (numeroLetra >= 13 && numeroLetra <= 26)
+		} else if (numeroLetra >= 13 && numeroLetra <= 26) {
 			texto[i] = 39 - numeroLetra + 'A' - 1;
+		}
 	}
 }
 
@@ -93,16 +95,10 @@ int main() {
 		printf("\n");
 
 		switch (escolha) {
-		case 1:
-			encriptar();
-			break;
-		case 2:
-			desencriptar();
-			break;
-		case 3:
-			break;
-		default:
-			printf("Insire uma das opções assinaladas.");
+			case 1: encriptar(); break;
+			case 2: desencriptar(); break;
+			case 3: break;
+			default: printf("Insire uma das opções assinaladas.");
 		}
 
 		printf("\n");

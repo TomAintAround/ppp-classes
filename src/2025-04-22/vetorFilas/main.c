@@ -74,8 +74,7 @@ void createString(queue_t* queue, char* string) {
 	string[i] = '\0';
 }
 
-size_t insert(queue_t* queueArray, size_t tamanhoElemArray,
-			  element_t* elemArray) {
+size_t insert(queue_t* queueArray, size_t tamanhoElemArray, element_t* elemArray) {
 	for (size_t i = 0; i < tamanhoElemArray; i++) {
 		element_t element = elemArray[i];
 		push(queueArray + element.index, element.character);
@@ -94,17 +93,17 @@ int main() {
 	queue_t filas[NUMERO_FILAS];
 	for (size_t i = 0; i < NUMERO_FILAS; i++) cria(filas + i);
 	element_t elements[] = {
-		{.character = 'a', .index = 1}, {.character = 'T', .index = 3},
-		{.character = 'y', .index = 0}, {.character = '8', .index = 1},
-		{.character = 'a', .index = 0}, {.character = '+', .index = 3},
-		{.character = 'b', .index = 1}, {.character = '2', .index = 0},
-		{.character = 'h', .index = 1}, {.character = '1', .index = 2},
-		{.character = 'B', .index = 4}, {.character = 'P', .index = 0},
-		{.character = 'r', .index = 0}, {.character = '*', .index = 4},
-		{.character = 'A', .index = 2}, {.character = ',', .index = 0},
-		{.character = 'c', .index = 3}, {.character = 'E', .index = 2},
-		{.character = 'x', .index = 0}, {.character = 'c', .index = 1},
-		{.character = 'K', .index = 4}, {.character = ')', .index = 2},
+		{ .character = 'a', .index = 1 }, { .character = 'T', .index = 3 },
+		{ .character = 'y', .index = 0 }, { .character = '8', .index = 1 },
+		{ .character = 'a', .index = 0 }, { .character = '+', .index = 3 },
+		{ .character = 'b', .index = 1 }, { .character = '2', .index = 0 },
+		{ .character = 'h', .index = 1 }, { .character = '1', .index = 2 },
+		{ .character = 'B', .index = 4 }, { .character = 'P', .index = 0 },
+		{ .character = 'r', .index = 0 }, { .character = '*', .index = 4 },
+		{ .character = 'A', .index = 2 }, { .character = ',', .index = 0 },
+		{ .character = 'c', .index = 3 }, { .character = 'E', .index = 2 },
+		{ .character = 'x', .index = 0 }, { .character = 'c', .index = 1 },
+		{ .character = 'K', .index = 4 }, { .character = ')', .index = 2 },
 	};
 	size_t maiorTamanho = insert(filas, 22, elements);
 

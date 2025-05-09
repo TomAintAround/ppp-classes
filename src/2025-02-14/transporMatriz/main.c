@@ -28,8 +28,7 @@ void printMatriz(int linhas, int colunas, int matriz[][colunas]) {
 void construirMatriz(int linhas, int colunas, int matriz[][colunas]) {
 	for (int linha = 0; linha < linhas; linha++) {
 		for (int coluna = 0; coluna < colunas; coluna++) {
-			printf("Insire um número para a linha %d coluna %d: ", linha + 1,
-				   coluna + 1);
+			printf("Insire um número para a linha %d coluna %d: ", linha + 1, coluna + 1);
 			if (scanf("%d", &matriz[linha][coluna]) != 1) {
 				printf("Algo correu mal e será definido como -1.");
 				matriz[linha][coluna] = -1;

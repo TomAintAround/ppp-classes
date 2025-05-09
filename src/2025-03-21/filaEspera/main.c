@@ -34,10 +34,11 @@ void push(Q_TYPE* queue, ITEM_TYPE condutor) {
 		node->condutor = condutor;
 		node->next = NULL;
 
-		if (!empty(queue))
+		if (!empty(queue)) {
 			queue->rear->next = node;
-		else
+		} else {
 			queue->front = node;
+		}
 		queue->rear = node;
 	}
 }

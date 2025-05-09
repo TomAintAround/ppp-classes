@@ -53,12 +53,10 @@ bool ordemCrescenteDatas(data_hora_t data1, data_hora_t data2) {
 	return true;
 }
 
-void searchData(list_t* list, data_hora_t data, node_t** previous,
-				node_t** current) {
+void searchData(list_t* list, data_hora_t data, node_t** previous, node_t** current) {
 	*previous = NULL;
 	*current = list->frontData;
-	while (*current != NULL &&
-		   ordemCrescenteDatas((*current)->evento.data, data)) {
+	while (*current != NULL && ordemCrescenteDatas((*current)->evento.data, data)) {
 		*previous = *current;
 		*current = (*current)->proxData;
 	}

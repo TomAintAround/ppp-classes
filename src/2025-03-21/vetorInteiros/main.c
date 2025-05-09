@@ -33,10 +33,11 @@ void push(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!empty(queue))
+		if (!empty(queue)) {
 			queue->last->next = node;
-		else
+		} else {
 			queue->first = node;
+		}
 		queue->last = node;
 	}
 }
@@ -51,7 +52,7 @@ void pop(queue_t* queue) {
 }
 
 data_t front(queue_t* queue) {
-	data_t data = {0, 0};
+	data_t data = { 0, 0 };
 	if (!empty(queue)) data = queue->first->data;
 	return data;
 }
@@ -88,7 +89,7 @@ int ocorrencias(int numero, int* vetor, int tamanho) {
 void armazenar(queue_t* fila, int* vetor, int tamanho) {
 	for (int i = 0; i < tamanho; i++) {
 		int contador = ocorrencias(vetor[i], vetor, tamanho);
-		data_t node = {vetor[i], contador};
+		data_t node = { vetor[i], contador };
 		push(fila, node);
 	}
 }
@@ -96,8 +97,7 @@ void armazenar(queue_t* fila, int* vetor, int tamanho) {
 void printFila(queue_t* fila) {
 	while (!empty(fila)) {
 		data_t node = front(fila);
-		printf("Número %d, que ocorre %d vezes.\n", node.numero,
-			   node.ocorrencias);
+		printf("Número %d, que ocorre %d vezes.\n", node.numero, node.ocorrencias);
 		pop(fila);
 	}
 }

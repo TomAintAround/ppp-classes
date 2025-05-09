@@ -26,15 +26,9 @@ void construirClassificacoes(int tamanho, Exame classificacoes[tamanho]) {
 	for (int i = 0; i < tamanho; i++) {
 		int epoca = rand() % 3;
 		switch (epoca) {
-		case 0:
-			strcpy(classificacoes[i].epoca, "normal");
-			break;
-		case 1:
-			strcpy(classificacoes[i].epoca, "recurso");
-			break;
-		case 2:
-			strcpy(classificacoes[i].epoca, "especial");
-			break;
+			case 0: strcpy(classificacoes[i].epoca, "normal"); break;
+			case 1: strcpy(classificacoes[i].epoca, "recurso"); break;
+			case 2: strcpy(classificacoes[i].epoca, "especial"); break;
 		}
 
 		classificacoes[i].nota = rand() % 23 - 2;
@@ -43,9 +37,8 @@ void construirClassificacoes(int tamanho, Exame classificacoes[tamanho]) {
 
 void printClassificacoes(int tamanho, Exame classificacoes[tamanho]) {
 	for (int i = 0; i < tamanho; i++) {
-		printf("Nome: %s, época: %s, classificação: %d ",
-			   classificacoes[i].nome, classificacoes[i].epoca,
-			   classificacoes[i].nota);
+		printf("Nome: %s, época: %s, classificação: %d ", classificacoes[i].nome,
+			   classificacoes[i].epoca, classificacoes[i].nota);
 		if (classificacoes[i].nota == -1) printf("(Desistiu)");
 		if (classificacoes[i].nota == -2) printf("(Faltou)");
 		printf("\n");
@@ -77,15 +70,9 @@ int main() {
 	int epoca = rand() % 3;
 	char epocaTexto[13];
 	switch (epoca) {
-	case 0:
-		strcpy(epocaTexto, "normal");
-		break;
-	case 1:
-		strcpy(epocaTexto, "recurso");
-		break;
-	case 2:
-		strcpy(epocaTexto, "especial");
-		break;
+		case 0: strcpy(epocaTexto, "normal"); break;
+		case 1: strcpy(epocaTexto, "recurso"); break;
+		case 2: strcpy(epocaTexto, "especial"); break;
 	}
 	frequenciasAbsolutas(TAMANHO, classificacoes, notas, epocaTexto);
 	printNotas(notas, epocaTexto);

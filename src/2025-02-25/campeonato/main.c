@@ -62,8 +62,7 @@ void printGolos(Equipa equipas[], Resultado resultados[]) {
 	for (int i = 0; i < QUANTIDADE_EQUIPAS; i++) {
 		Resultado resultado = resultados[i];
 		printf("%s: %d | %s: %d\n", equipas[resultado.equipa1].nome,
-			   resultado.golos1, equipas[resultado.equipa2].nome,
-			   resultado.golos2);
+			   resultado.golos1, equipas[resultado.equipa2].nome, resultado.golos2);
 	}
 	printf("\n");
 }
@@ -113,10 +112,11 @@ void ordernarEquipas(Equipa equipas[]) {
 		if (ordemIncorreta(equipa1, equipa2)) {
 			equipas[i] = equipa2;
 			equipas[i + 1] = equipa1;
-			if (i == 0)
+			if (i == 0) {
 				i -= 1;
-			else
+			} else {
 				i -= 2;
+			}
 		}
 	}
 }

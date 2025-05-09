@@ -18,9 +18,9 @@ int encontrarExpressao(int tamanhoString, char string[], int tamanhoExpressao,
 	int progresso = 0;
 	for (int i = 0; i < tamanhoString; i++) {
 		if (progresso == tamanhoExpressao - 1) return i - progresso;
-		if (string[i] == expressao[progresso])
+		if (string[i] == expressao[progresso]) {
 			progresso++;
-		else if (string[i] != expressao[progresso && progresso > 0]) {
+		} else if (string[i] != expressao[progresso && progresso > 0]) {
 			i -= progresso;
 			progresso = 0;
 		}
@@ -31,14 +31,13 @@ int encontrarExpressao(int tamanhoString, char string[], int tamanhoExpressao,
 int main() {
 	char string[TAMANHO];
 	lerConsola(string);
-	int posicaoWally =
-		encontrarExpressao(TAMANHO, string, strlen("Wally"), "Wally");
+	int posicaoWally = encontrarExpressao(TAMANHO, string, strlen("Wally"), "Wally");
 
-	if (posicaoWally == -1)
+	if (posicaoWally == -1) {
 		printf("Palavra não encontrada.\n");
-	else
-		printf("Esta cadeia tem a palavra Wally na posição %d.\n",
-			   posicaoWally);
+	} else {
+		printf("Esta cadeia tem a palavra Wally na posição %d.\n", posicaoWally);
+	}
 
 	return 0;
 }

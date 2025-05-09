@@ -55,8 +55,7 @@ void ordernar(Data datas[], int quantidadeDatas) {
 	}
 }
 
-int selecionarDatas(Data datas[], Data datasEspecificas[], int quantidadeDatas,
-					int ano) {
+int selecionarDatas(Data datas[], Data datasEspecificas[], int quantidadeDatas, int ano) {
 	int lugar = 0;
 	for (int data = 0; data < quantidadeDatas; data++) {
 		if (datas[data].ano == ano) { datasEspecificas[lugar++] = datas[data]; }
@@ -65,8 +64,7 @@ int selecionarDatas(Data datas[], Data datasEspecificas[], int quantidadeDatas,
 }
 
 int main() {
-	int quantidadeDatas =
-		perguntarNumero(1, 1024, "Insire a quantidade de datas: ");
+	int quantidadeDatas = perguntarNumero(1, 1024, "Insire a quantidade de datas: ");
 	printf("\n");
 
 	Data datas[quantidadeDatas];
@@ -81,8 +79,7 @@ int main() {
 
 	printf("Menor data: %d/%d/%d.\n", datas[0].dia, datas[0].mes, datas[0].ano);
 
-	int ano =
-		perguntarNumero(-2100000000, 2100000000, "Insire o ano que quer ver: ");
+	int ano = perguntarNumero(-2100000000, 2100000000, "Insire o ano que quer ver: ");
 	Data datasEspecificas[quantidadeDatas];
 	int limite = selecionarDatas(datas, datasEspecificas, quantidadeDatas, ano);
 	printf("Datas com esse ano: ");

@@ -86,8 +86,7 @@ int main() {
 		insert(header, askInt(-2100000000, 2100000000));
 	}
 	printf("Menor elemento: %d\nMaior elemento: %d\nMédia aritmética: %lf\n",
-		   smallestElement(header), biggestElement(header),
-		   average(header, size));
+		   smallestElement(header), biggestElement(header), average(header, size));
 
 	header = clean(header);
 	return 0;

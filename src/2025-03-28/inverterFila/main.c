@@ -40,10 +40,11 @@ void pushQueue(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!emptyQueue(queue))
+		if (!emptyQueue(queue)) {
 			queue->last->next = node;
-		else
+		} else {
 			queue->first = node;
+		}
 		queue->last = node;
 	}
 }
@@ -74,13 +75,13 @@ void popStack(node_t** stack) {
 }
 
 data_t frontQueue(queue_t* queue) {
-	data_t data = {-1};
+	data_t data = { -1 };
 	if (!emptyQueue(queue)) data = queue->first->data;
 	return data;
 }
 
 data_t frontStack(node_t** stack) {
-	data_t data = {-1};
+	data_t data = { -1 };
 	if (!emptyStack(stack)) data = (*stack)->data;
 	return data;
 }
@@ -109,7 +110,7 @@ int askInt(int min, int max) {
 void storeQueue(queue_t* queue, int size) {
 	for (int i = 0; i < size; i++) {
 		printf("Elemento %d: ", i + 1);
-		data_t data = {askInt(-2100000000, 2100000000)};
+		data_t data = { askInt(-2100000000, 2100000000) };
 		pushQueue(queue, data);
 	}
 }

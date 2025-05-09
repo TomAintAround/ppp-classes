@@ -32,10 +32,11 @@ void push(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!empty(queue))
+		if (!empty(queue)) {
 			queue->last->next = node;
-		else
+		} else {
 			queue->first = node;
+		}
 		queue->last = node;
 	}
 }
@@ -50,14 +51,13 @@ void pop(queue_t* queue) {
 }
 
 data_t front(queue_t* queue) {
-	data_t data = {-1};
+	data_t data = { -1 };
 	if (!empty(queue)) data = queue->first->data;
 	return data;
 }
 
 void clean(queue_t* queue) {
-	while (!empty(queue))
-		pop(queue);
+	while (!empty(queue)) pop(queue);
 	init(queue);
 }
 
@@ -101,7 +101,7 @@ int main() {
 		int numeroElementos = perguntarInteiro(1, 100);
 		for (int _ = 0; _ < numeroElementos; _++) {
 			printf("Insire um número para a fila %d: ", i + 1);
-			data_t valor = {perguntarInteiro(-2100000000, 2100000000)};
+			data_t valor = { perguntarInteiro(-2100000000, 2100000000) };
 			push(vetor[i], valor);
 		}
 		printf("\n");

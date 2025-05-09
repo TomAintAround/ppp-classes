@@ -40,7 +40,7 @@ void pop(s_pile_t** stackPtr) {
 }
 
 data_t front(s_pile_t** stackPtr) {
-	data_t data = {'a'};
+	data_t data = { 'a' };
 	if (!empty(stackPtr)) data = (*stackPtr)->data;
 	return data;
 }
@@ -51,12 +51,11 @@ void clean(s_pile_t** stackPtr) {
 }
 
 void store(s_pile_t** stackPtr, char* string) {
-	for (int letter = 0; string[letter] != '\n' && string[letter] != '\0';
-		 letter++) {
-		data_t data = {string[letter]};
+	for (int letter = 0; string[letter] != '\n' && string[letter] != '\0'; letter++) {
+		data_t data = { string[letter] };
 		push(stackPtr, data);
 	}
-	data_t data = {'\0'};
+	data_t data = { '\0' };
 	push(stackPtr, data);
 }
 

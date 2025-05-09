@@ -28,8 +28,7 @@ void printValores(int sequencia[], int tamanho) {
 int procurarMenorOuMaior(int sequencia[], int tamanho, bool maior) {
 	int valor = sequencia[0];
 	for (int i = 0; i < tamanho; i++) {
-		if ((sequencia[i] < valor && !maior) ||
-			(sequencia[i] > valor && maior)) {
+		if ((sequencia[i] < valor && !maior) || (sequencia[i] > valor && maior)) {
 			valor = sequencia[i];
 		}
 	}
@@ -50,8 +49,7 @@ void subsequencia(int sequencia[], int tamanho, bool acima, char texto[]) {
 	double media = calcularMedia(sequencia, tamanho);
 	printf("Números %s da média (%.3f):\n", texto, media);
 	for (int i = 0; i < tamanho; i++) {
-		if ((sequencia[i] < media && !acima) ||
-			(sequencia[i] > media && acima)) {
+		if ((sequencia[i] < media && !acima) || (sequencia[i] > media && acima)) {
 			printf("%d ", sequencia[i]);
 		}
 	}
@@ -71,8 +69,7 @@ int main() {
 
 		printf("\n");
 		printf("Escolha 1 das seguintes opções:\n");
-		printf("1. Introduzir uma sequência de %d números inteiros.\n",
-			   tamanho);
+		printf("1. Introduzir uma sequência de %d números inteiros.\n", tamanho);
 		printf("2. Escrever no ecrã a sequência introduzida.\n");
 		printf("3. Procurar o maior número da sequência.\n");
 		printf("4. Procurar o menor número da sequência.\n");
@@ -85,39 +82,27 @@ int main() {
 		escolha = perguntar(1, 9, "> ");
 		printf("\n");
 		switch (escolha) {
-		case 1:
-			introduzirValores(sequencia, tamanho);
-			break;
-		case 2:
-			printValores(sequencia, tamanho);
-			break;
-		case 3:
-			printf("O maior número é %d.\n",
-				   procurarMenorOuMaior(sequencia, tamanho, true));
-			break;
-		case 4:
-			printf("O menor número é %d.\n",
-				   procurarMenorOuMaior(sequencia, tamanho, false));
-			break;
-		case 5:
-			printf("O somatório da sequência é %d.\n",
-				   calcularSomatorio(sequencia, tamanho));
-			break;
-		case 6:
-			printf("A média da sequência é %.3f.\n",
-				   calcularMedia(sequencia, tamanho));
-			break;
-		case 7:
-			subsequencia(sequencia, tamanho, false, "abaixo");
-			break;
-		case 8:
-			subsequencia(sequencia, tamanho, true, "acima");
-			break;
-		case 9:
-			break;
-		default:
-			printf("Algo correu mesmo muito mal.\n");
-			break;
+			case 1: introduzirValores(sequencia, tamanho); break;
+			case 2: printValores(sequencia, tamanho); break;
+			case 3:
+				printf("O maior número é %d.\n",
+					   procurarMenorOuMaior(sequencia, tamanho, true));
+				break;
+			case 4:
+				printf("O menor número é %d.\n",
+					   procurarMenorOuMaior(sequencia, tamanho, false));
+				break;
+			case 5:
+				printf("O somatório da sequência é %d.\n",
+					   calcularSomatorio(sequencia, tamanho));
+				break;
+			case 6:
+				printf("A média da sequência é %.3f.\n", calcularMedia(sequencia, tamanho));
+				break;
+			case 7: subsequencia(sequencia, tamanho, false, "abaixo"); break;
+			case 8: subsequencia(sequencia, tamanho, true, "acima"); break;
+			case 9: break;
+			default: printf("Algo correu mesmo muito mal.\n"); break;
 		}
 	} while (escolha != 9);
 

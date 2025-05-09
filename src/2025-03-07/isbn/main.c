@@ -1,6 +1,5 @@
 // Folha 3
 // Exercício 9.3.1
-#include <math.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -65,11 +64,9 @@ int main() {
 	printValores(s2);
 
 	if (s2[TAMANHO - 1] % 11 == 0) {
-		printf("O ISBN é correto, porque %d é divisível por 11.\n",
-			   s2[TAMANHO - 1]);
+		printf("O ISBN é correto, porque %d é divisível por 11.\n", s2[TAMANHO - 1]);
 	} else {
-		printf("O ISBN é incorreto, porque %d não é divisível por 11.\n",
-			   s2[TAMANHO - 1]);
+		printf("O ISBN é incorreto, porque %d não é divisível por 11.\n", s2[TAMANHO - 1]);
 	}
 
 	return 0;

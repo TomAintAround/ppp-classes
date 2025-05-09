@@ -13,8 +13,9 @@ int contarNumeros(char* string) {
 			if (*letra >= '0' && *letra <= '9') {
 				contador *= 10;
 				contador += *letra - '0';
-			} else
+			} else {
 				contador = 0;
+			}
 			letra++;
 		}
 		contadorPrincipal += contador;

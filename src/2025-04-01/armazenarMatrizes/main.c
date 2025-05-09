@@ -16,7 +16,7 @@ typedef struct _list_node {
 
 list_node* create() {
 	list_node* header = (list_node*)malloc(sizeof(list_node));
-	data_t data = {{{-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}}};
+	data_t data = { { { -1, -1, -1 }, { -1, -1, -1 }, { -1, -1, -1 } } };
 	if (header != NULL) {
 		header->data = data;
 		header->next = NULL;

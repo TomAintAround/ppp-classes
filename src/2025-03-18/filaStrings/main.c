@@ -35,10 +35,11 @@ void push(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!empty(queue))
+		if (!empty(queue)) {
 			queue->last->next = node;
-		else
+		} else {
 			queue->first = node;
+		}
 		queue->last = node;
 	}
 }
@@ -53,7 +54,7 @@ void pop(queue_t* queue) {
 }
 
 data_t front(queue_t* queue) {
-	data_t data = {"asdf"};
+	data_t data = { "asdf" };
 	if (!empty(queue)) data = queue->first->data;
 	return data;
 }

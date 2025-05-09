@@ -1,6 +1,5 @@
 // Folha 4
 // Exercício 13.3.3
-#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -83,15 +82,13 @@ void searchNascimento(list_t* list, data_t dataNascimento, node_t** previous,
 					  node_t** current) {
 	*previous = NULL;
 	*current = list->frontNascimento;
-	while (*current != NULL &&
-		   ordemData((*current)->atleta.dataNascimento, dataNascimento)) {
+	while (*current != NULL && ordemData((*current)->atleta.dataNascimento, dataNascimento)) {
 		*previous = *current;
 		*current = (*current)->proxNascimento;
 	}
 }
 
-void searchPontuacao(list_t* list, int pontuacao, node_t** previous,
-					 node_t** current) {
+void searchPontuacao(list_t* list, int pontuacao, node_t** previous, node_t** current) {
 	*previous = NULL;
 	*current = list->frontPontuacao;
 	while (*current != NULL && (*current)->atleta.pontuacao < pontuacao) {
@@ -189,19 +186,23 @@ void erro(char* mensagem) {
 void inserirAtleta(list_t* list) {
 	atleta_t atleta;
 	printf("Insire o nome do atleta: ");
-	if (fgets(atleta.nome, STRING_SIZE, stdin) == NULL)
+	if (fgets(atleta.nome, STRING_SIZE, stdin) == NULL) {
 		erro("Algo correu mal.\n");
+	}
 	printf("Insire o número do atleta: ");
 	if (scanf("%d", &atleta.numero) != 1) erro("Algo correu mal.\n");
 	printf("Insire o dia do nascimento do atleta: ");
-	if (scanf("%d", &atleta.dataNascimento.dia) != 1)
+	if (scanf("%d", &atleta.dataNascimento.dia) != 1) {
 		erro("Algo correu mal.\n");
+	}
 	printf("Insire o mês do nascimento do atleta: ");
-	if (scanf("%d", &atleta.dataNascimento.mes) != 1)
+	if (scanf("%d", &atleta.dataNascimento.mes) != 1) {
 		erro("Algo correu mal.\n");
+	}
 	printf("Insire o ano do nascimento do atleta: ");
-	if (scanf("%d", &atleta.dataNascimento.ano) != 1)
+	if (scanf("%d", &atleta.dataNascimento.ano) != 1) {
 		erro("Algo correu mal.\n");
+	}
 	printf("Insire a pontuação do atleta: ");
 	if (scanf("%d", &atleta.pontuacao) != 1) erro("Algo correu mal.\n");
 
@@ -227,24 +228,12 @@ int main() {
 		while (getchar() != '\n');
 
 		switch (escolha) {
-		case 1:
-			inserirAtleta(&list);
-			break;
-		case 2:
-			printListaNome(&list);
-			break;
-		case 3:
-			printListaNum(&list);
-			break;
-		case 4:
-			printListaNascimento(&list);
-			break;
-		case 5:
-			printListaPontuacao(&list);
-			break;
-		default:
-			escolha = 0;
-			break;
+			case 1: inserirAtleta(&list); break;
+			case 2: printListaNome(&list); break;
+			case 3: printListaNum(&list); break;
+			case 4: printListaNascimento(&list); break;
+			case 5: printListaPontuacao(&list); break;
+			default: escolha = 0; break;
 		}
 
 		printf("\n");

@@ -1,6 +1,5 @@
 // Folha 4
 // Exercício 13.3.2
-#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,8 +35,7 @@ void init(list_t* list) {
 	list->frontAdesao = NULL;
 }
 
-void searchNome(list_t* list, char* nome, list_node_t** previous,
-				list_node_t** current) {
+void searchNome(list_t* list, char* nome, list_node_t** previous, list_node_t** current) {
 	*previous = NULL;
 	*current = list->frontNome;
 	while (*current != NULL && strcmp((*current)->socio.nome, nome) < 0) {
@@ -57,12 +55,10 @@ bool ordemAdesao(data_t data1, data_t data2) {
 	return true;
 }
 
-void searchAdesao(list_t* list, data_t data, list_node_t** previous,
-				  list_node_t** current) {
+void searchAdesao(list_t* list, data_t data, list_node_t** previous, list_node_t** current) {
 	*previous = NULL;
 	*current = list->frontAdesao;
-	while (*current != NULL &&
-		   ordemAdesao((*current)->socio.dataInscricao, data)) {
+	while (*current != NULL && ordemAdesao((*current)->socio.dataInscricao, data)) {
 		*previous = *current;
 		*current = (*current)->proxAdesao;
 	}
@@ -98,8 +94,7 @@ void printSocio(socio_t socio) {
 	printf("Idade: %d\n", socio.idade);
 	printf("Número de sócio: %d\n", socio.numSocio);
 	data_t data = socio.dataInscricao;
-	printf("Data de inscrição de sócio: %d/%d/%d\n", data.dia, data.mes,
-		   data.ano);
+	printf("Data de inscrição de sócio: %d/%d/%d\n", data.dia, data.mes, data.ano);
 	printf("\n");
 }
 
@@ -143,8 +138,9 @@ void inserirSocio(list_t* lista) {
 	printf("Nome do sócio: ");
 	if (fgets(nome, STRING_SIZE, stdin) == NULL) erro("Algo correu mal.\n");
 	printf("Profissão do sócio: ");
-	if (fgets(profissao, STRING_SIZE, stdin) == NULL)
+	if (fgets(profissao, STRING_SIZE, stdin) == NULL) {
 		erro("Algo correu mal.\n");
+	}
 	printf("Morada do sócio: ");
 	if (fgets(morada, STRING_SIZE, stdin) == NULL) erro("Algo correu mal.\n");
 	printf("Idade do sócio: ");
@@ -253,33 +249,15 @@ int main() {
 		while (getchar() != '\n');
 
 		switch (escolha) {
-		case 1:
-			inserirSocio(&lista);
-			break;
-		case 2:
-			printSocioNumero(&lista);
-			break;
-		case 3:
-			printSocioNome(&lista);
-			break;
-		case 4:
-			printSocioMorada(&lista);
-			break;
-		case 5:
-			printSocioQuotaAtrasada(&lista);
-			break;
-		case 6:
-			removerSocio(&lista);
-			break;
-		case 7:
-			printListaNomes(&lista);
-			break;
-		case 8:
-			printListaDatas(&lista);
-			break;
-		default:
-			escolha = 0;
-			break;
+			case 1: inserirSocio(&lista); break;
+			case 2: printSocioNumero(&lista); break;
+			case 3: printSocioNome(&lista); break;
+			case 4: printSocioMorada(&lista); break;
+			case 5: printSocioQuotaAtrasada(&lista); break;
+			case 6: removerSocio(&lista); break;
+			case 7: printListaNomes(&lista); break;
+			case 8: printListaDatas(&lista); break;
+			default: escolha = 0; break;
 		}
 
 		printf("\n");

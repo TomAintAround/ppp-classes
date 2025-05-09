@@ -1,7 +1,6 @@
 // Folha 2
 // Exercício 6.3.2
 // This is full of bugs. I gave up
-#include <math.h>
 #include <stdio.h>
 #include <string.h>
 

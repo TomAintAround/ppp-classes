@@ -1,7 +1,6 @@
 // Folha 2
 // Exercício 7.1.1
 #include <stdio.h>
-#include <stdlib.h>
 
 typedef struct {
 	int dia, mes, ano;

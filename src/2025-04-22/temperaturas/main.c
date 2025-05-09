@@ -22,8 +22,7 @@ Temperaturas* criaTemperaturas(size_t tamanho) {
 	return temperatura;
 }
 
-void contaPosNegTemperaturas(Temperaturas* temperatura, size_t* positivos,
-							 size_t* negativos) {
+void contaPosNegTemperaturas(Temperaturas* temperatura, size_t* positivos, size_t* negativos) {
 	for (size_t i = 0; i < temperatura->tamanho; i++) {
 		if (temperatura->valores[i] > 0) {
 			(*positivos)++;
@@ -52,8 +51,9 @@ int main() {
 		return 1;
 	}
 
-	for (size_t i = 0; i < tamanho; i++)
+	for (size_t i = 0; i < tamanho; i++) {
 		temperatura->valores[i] = (rand() % 60) - 30;
+	}
 	size_t positivos, negativos;
 	contaPosNegTemperaturas(temperatura, &positivos, &negativos);
 	printf("Número de medições positivas: %zu\n", positivos);

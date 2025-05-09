@@ -14,7 +14,7 @@ int main() {
 		}
 	}
 
-	int multiplos[LIMITE] = {0};
+	int multiplos[LIMITE] = { 0 };
 	int comprimentoMultiplos = sizeof(multiplos) / sizeof(int);
 	int i = 0;
 	int multiplo = valor;

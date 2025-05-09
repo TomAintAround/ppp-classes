@@ -38,7 +38,7 @@ void pop(s_pile_t** stackPtr) {
 }
 
 data_t front(s_pile_t** stackPtr) {
-	data_t pile = {-1};
+	data_t pile = { -1 };
 	if (!empty(stackPtr)) pile = (*stackPtr)->data;
 	return pile;
 }
@@ -63,7 +63,7 @@ void store(int tamanho, s_pile_t** stackPtr) {
 	for (int i = 0; i < tamanho; i++) {
 		printf("Elemento %d: ", i + 1);
 		int numero = perguntarInteiro(-2100000000, 2100000000);
-		data_t data = {numero};
+		data_t data = { numero };
 		push(stackPtr, data);
 	}
 }

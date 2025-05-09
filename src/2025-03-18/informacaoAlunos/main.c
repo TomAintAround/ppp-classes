@@ -41,10 +41,11 @@ void push(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!empty(queue))
+		if (!empty(queue)) {
 			queue->last->next = node;
-		else
+		} else {
 			queue->first = node;
+		}
 		queue->last = node;
 	}
 }
@@ -75,7 +76,8 @@ void armazenar(queue_t* fila) {
 		"Tomás",   "Gabriel",  "Simão", "Afonso",	 "Pedro",
 		"Diogo",   "André",	   "João",	"Guilherme", "Gonçalo",
 		"Mariana", "Henrique", "Joana", "Mara",		 "Lara",
-		"Daniela", "Patrícia", "Vanda", "Sónia",	 "Sara"};
+		"Daniela", "Patrícia", "Vanda", "Sónia",	 "Sara"
+	};
 	for (int i = 0; i < NUMERO_ALUNOS; i++) {
 		data_t aluno;
 		strcpy(aluno.nome, nomes[i]);

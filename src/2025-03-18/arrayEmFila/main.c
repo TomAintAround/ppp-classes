@@ -32,10 +32,11 @@ void push(queue_t* queue, data_t data) {
 		node->data = data;
 		node->next = NULL;
 
-		if (!empty(queue))
+		if (!empty(queue)) {
 			queue->last->next = node;
-		else
+		} else {
 			queue->first = node;
+		}
 		queue->last = node;
 	}
 }
@@ -50,7 +51,7 @@ void pop(queue_t* queue) {
 }
 
 data_t front(queue_t* queue) {
-	data_t data = {0};
+	data_t data = { 0 };
 	if (!empty(queue)) data = queue->first->data;
 	return data;
 }
@@ -78,7 +79,7 @@ void criarArray(int* vetor, int N) {
 
 void armazenarArrays(int* vetor, int N, queue_t* fila) {
 	for (int i = 0; i < N; i++) {
-		data_t valor = {vetor[i]};
+		data_t valor = { vetor[i] };
 		push(fila, valor);
 	}
 }

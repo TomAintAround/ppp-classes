@@ -60,7 +60,7 @@ void insert(node_t* header, data_t data) {
 }
 
 data_t front(node_t* header) {
-	data_t data = {"hay"};
+	data_t data = { "hay" };
 	if (header->next != NULL) strcpy(data.word, header->next->data.word);
 	return data;
 }

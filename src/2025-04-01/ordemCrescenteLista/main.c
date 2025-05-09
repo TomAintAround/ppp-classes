@@ -14,7 +14,7 @@ typedef struct _list_node {
 } list_node;
 
 list_node* create() {
-	data_t data = {-1.0};
+	data_t data = { -1.0 };
 	list_node* header = (list_node*)malloc(sizeof(list_node));
 	if (header != NULL) {
 		header->data = data;
@@ -38,8 +38,7 @@ list_node* clean(list_node* header) {
 	return NULL;
 }
 
-void search(list_node* header, double key, list_node** previous,
-			list_node** current) {
+void search(list_node* header, double key, list_node** previous, list_node** current) {
 	*previous = header;
 	*current = (*previous)->next;
 	while ((*current) != NULL && (*current)->data.number < key) {
@@ -88,7 +87,7 @@ void store(list_node* header, int size) {
 			perror("Algo correu mal.\n");
 			exit(1);
 		}
-		data_t data = {value};
+		data_t data = { value };
 		insert(header, data);
 	}
 }

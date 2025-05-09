@@ -18,8 +18,9 @@ int main() {
 		if (string[i] >= '0' && string[i] <= '9') {
 			numero *= 10;
 			numero += string[i] - '0';
-		} else
+		} else {
 			numero = 0;
+		}
 		if (numero > numeroMaior) numeroMaior = numero;
 	}
 

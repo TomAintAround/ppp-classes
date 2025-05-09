@@ -1,6 +1,5 @@
 // Folha 1
 // Exercício 4.2.6
-#include <math.h>
 #include <stdio.h>
 
 int inverte(int numero) {

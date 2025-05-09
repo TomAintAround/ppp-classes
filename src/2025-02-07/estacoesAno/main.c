@@ -20,32 +20,20 @@ int main() {
 	}
 
 	switch (mes) {
-	case 12:
-		dia += 30;
-	case 11:
-		dia += 31;
-	case 10:
-		dia += 30;
-	case 9:
-		dia += 31;
-	case 8:
-		dia += 31;
-	case 7:
-		dia += 30;
-	case 6:
-		dia += 31;
-	case 5:
-		dia += 30;
-	case 4:
-		dia += 31;
-	case 3:
-		dia += 28;
-	case 2:
-		dia += 31;
+		case 12: dia += 30;
+		case 11: dia += 31;
+		case 10: dia += 30;
+		case 9: dia += 31;
+		case 8: dia += 31;
+		case 7: dia += 30;
+		case 6: dia += 31;
+		case 5: dia += 30;
+		case 4: dia += 31;
+		case 3: dia += 28;
+		case 2: dia += 31;
 	}
 
-	if (dia < 79 ||
-		dia >= 355) { // Antes de 20 de março e depois de 20 de dezembro
+	if (dia < 79 || dia >= 355) { // Antes de 20 de março e depois de 20 de dezembro
 		printf("Inverno");
 	} else if (dia < 172) { // Antes de 21 de junho
 		printf("Primavera");
