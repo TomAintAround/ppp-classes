@@ -96,7 +96,7 @@ void cleanStack(node_t** stack) {
 	initStack(stack);
 }
 
-int askInt(int min, int max) {
+int askInt(const int min, const int max) {
 	int value = min - 1;
 	while (value < min || value > max) {
 		if (scanf("%d", &value) != 1) {
